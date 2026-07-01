@@ -1,72 +1,307 @@
-**APCRE: **
-Autonomous Private Code Reviewer and Educational Platform
-APCRE is a next-generation, offline-first, and privacy-respecting hybrid AI assistant designed for automated code reviews, style auditing, security analysis, and interactive software engineering tutoring.
+# APCRE – Autonomous Private Code Reviewer and Educational Platform
 
+APCRE (Autonomous Private Code Reviewer and Educational Platform) is a next-generation, offline-first, and privacy-focused AI-powered software engineering platform designed for automated code review, security auditing, architecture analysis, and intelligent programming assistance.
 
-Unlike standard cloud-based coding assistants, APCRE runs entirely locally to guarantee 100% data privacy and intellectual property security for developers and organizations.
+Unlike traditional cloud-based coding assistants, APCRE runs entirely on local infrastructure, ensuring complete data privacy and intellectual property protection for developers, researchers, and organizations.
 
-**👥 Author Information**
-Author: Muneer Hussain
-Institution: Department of Software Engineering, Faculty of Telecommunication and Information Engineering, University of Engineering and Technology (UET), Taxila
+---
 
-**Project Role:** Lead Software Engineer & Machine Learning Developer
-**
-🌟 Key Architecture & Features**
+## 👨‍💻 Author
 
-APCRE operates via a Local Hybrid AI Architecture combining three distinct layers of analysis:
+**Muneer Hussain**
 
-Deterministic Layer (Static AST Rules-Engine)
+- Department of Software Engineering
+- Faculty of Telecommunication and Information Engineering
+- University of Engineering and Technology (UET), Taxila
+- Role: Lead Software Engineer & Machine Learning Developer
 
-Performs structural parsing using an Abstract Syntax Tree (AST).
-Audits PEP 8 / PEP 257 standards and catches security flaws (e.g., hardcoded credentials, swallowed exceptions) in sub-millisecond execution times.
-Predictive Layer (Hybrid Machine Learning Ensemble)
+---
 
-Extracts a 779-Dimensional Fused Feature Space (768-D semantic projections via CodeBERT + 11-D concrete syntactic features via Tree-Sitter AST depth metrics).
-Feeds into a soft-voting ensemble classifier (Random Forest, MLP Neural Network, and Gradient Boosting) achieving an empirically validated 94.59% F1-Score in classifying complex design anti-patterns, coupling behaviors, and SOLID violations.
-Generative Layer (Local Stateful LLM Tutor)
+# 🚀 Key Features
 
-Integrates a local, quantized Llama-3-8B-Instruct (Q4_K_M) model coordinated offline via the Ollama framework.
-Retains context boundaries dynamically using persisted session memory in SQLite database files (apcre_memory.db).
-Runs an Autonomous Sandbox Coder Agent to test generated code locally, capturing runtime tracebacks and recursively self-healing execution blocks.
+- 🔒 100% Offline AI-powered Code Review
+- 🔍 Static Code Analysis using Python AST
+- 🛡️ Security Vulnerability Detection
+- 📐 Software Architecture Review
+- 📊 Machine Learning-based Code Quality Prediction
+- 🤖 Local LLM Programming Assistant
+- 🧠 Persistent Conversation Memory
+- 💻 Interactive Code Editor
+- 📈 Repository Intelligence
+- 🎯 Automated Design Pattern & SOLID Principle Analysis
 
-**🛠️ Tech Stack & Dependencies**
+---
 
-Frontend (Next.js)
-Framework: Next.js (React)
-State Management: Zustand
-Animations: Framer Motion
-Editor Integration: Monaco Editor
-Styling: Tailwind CSS & PostCSS
-Backend (Node.js & Python)
-Server: Node.js, Express, Socket.io
-AI/ML Engine: Python 3, PyTorch, Scikit-Learn, NumPy
-Parser & Embedder: Tree-Sitter, CodeBERT
-Conversational Core: Ollama (Llama-3-8B)
-Database: SQLite3
+# 🏗️ System Architecture
 
-**🚀 Getting Started**
-Prerequisites
-Node.js (v18+)
-Python (3.8+)
-Ollama (installed locally and running)
-Pull the model: ollama pull llama3
-Step 1: Run the Backend Services
-Navigate to the backend folder:
+APCRE is built upon a **three-layer Hybrid AI Architecture**.
+
+## 1. Deterministic Layer (Static Analysis Engine)
+
+This layer performs fast static code analysis using Python's Abstract Syntax Tree (AST).
+
+Features include:
+
+- PEP 8 Style Checking
+- PEP 257 Documentation Analysis
+- Code Smell Detection
+- Hardcoded Credential Detection
+- Exception Handling Analysis
+- Security Rule Enforcement
+
+Execution time is typically within milliseconds.
+
+---
+
+## 2. Predictive Layer (Machine Learning Engine)
+
+The predictive engine combines semantic and syntactic code understanding using a hybrid feature representation.
+
+### Feature Extraction
+
+- 768-dimensional semantic embeddings using CodeBERT
+- 11 handcrafted syntactic metrics extracted using Tree-Sitter
+
+Total Feature Space:
+
+**779 Dimensions**
+
+### Machine Learning Models
+
+- Random Forest
+- Multi-Layer Perceptron (MLP)
+- Gradient Boosting
+
+The models are combined using a Soft Voting Ensemble.
+
+### Performance
+
+- F1 Score: **94.59%**
+
+The model predicts:
+
+- Design Anti-patterns
+- SOLID Principle Violations
+- Coupling Issues
+- Architecture Smells
+
+---
+
+## 3. Generative Layer (Local AI Tutor)
+
+The intelligent assistant operates entirely offline using:
+
+- Llama-3-8B-Instruct (Q4_K_M)
+- Ollama
+
+Capabilities include:
+
+- Code Explanation
+- Bug Fix Suggestions
+- Architecture Guidance
+- Interactive Programming Tutor
+- Stateful Conversations
+- Automatic Code Execution
+- Sandbox Testing
+- Self-Healing Execution Loops
+
+Conversation history is stored locally using SQLite.
+
+---
+
+# 🛠️ Technology Stack
+
+## Frontend
+
+- Next.js
+- React
+- Zustand
+- Tailwind CSS
+- Framer Motion
+- Monaco Editor
+
+## Backend
+
+- Node.js
+- Express.js
+- Socket.io
+
+## AI & Machine Learning
+
+- Python 3
+- PyTorch
+- Scikit-Learn
+- NumPy
+- Tree-Sitter
+- CodeBERT
+- Ollama
+- Llama 3
+
+## Database
+
+- SQLite3
+
+---
+
+# 📂 Project Structure
+
+```
+APCRE/
+│
+├── backend/
+│   ├── ai-engine/
+│   ├── workspace/
+│   ├── server.js
+│   └── package.json
+│
+├── src/
+│   ├── app/
+│   ├── components/
+│   ├── learning/
+│   └── store/
+│
+├── public/
+├── scratch/
+├── package.json
+└── README.md
+```
+
+---
+
+# 🚀 Getting Started
+
+## Prerequisites
+
+- Node.js 18+
+- Python 3.8+
+- Ollama
+
+Install the required model:
+
+```bash
+ollama pull llama3
+```
+
+---
+
+## Backend Setup
+
+Navigate to the backend directory:
+
+```bash
 cd backend
-Install Node dependencies:
-npm install
-Start the Express & Socket.io server:
-npm start
-Configure and run the local Python AI API service (backend/ai-engine/apcre_api.py):
-cd ai-engine
-python apcre_api.py
-Step 2: Run the Next.js Frontend Dashboard
-Open a new terminal in the root directory (apcre-ui).
-Install frontend packages:
-npm install
-Boot up the local development server:
-npm run dev
-Open the interface in your browser (https://6a3fa52df59c19ecef72f4cb--sage-kitsune-510d43.netlify.app/).
+```
 
-**📄 License**
-This project is licensed under the MIT License.
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the backend server:
+
+```bash
+npm start
+```
+
+Open another terminal:
+
+```bash
+cd backend/ai-engine
+```
+
+Run the AI API:
+
+```bash
+python apcre_api.py
+```
+
+---
+
+## Frontend Setup
+
+Return to the project root:
+
+```bash
+npm install
+```
+
+Start the Next.js application:
+
+```bash
+npm run dev
+```
+
+Open your browser:
+
+```
+http://localhost:3000
+```
+
+---
+
+# 🎯 Core Modules
+
+- AI Code Reviewer
+- Security Scanner
+- Architecture Analyzer
+- Repository Intelligence
+- Interview Assistant
+- Research Assistant
+- Knowledge Graph
+- Test Generator
+- Autonomous Coding Agent
+- Interactive Learning Platform
+
+---
+
+# 🔒 Privacy
+
+APCRE is designed with privacy as its primary objective.
+
+- No cloud dependency
+- No source code leaves the user's computer
+- Fully offline AI inference
+- Local databases only
+- Local LLM execution through Ollama
+
+---
+
+# 📈 Machine Learning Highlights
+
+- CodeBERT Semantic Embeddings
+- Tree-Sitter Structural Features
+- Ensemble Learning
+- Software Defect Prediction
+- Design Smell Detection
+- Architecture Quality Analysis
+
+---
+
+# 📄 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+# ⭐ Acknowledgements
+
+This project was developed as part of academic research in Software Engineering at:
+
+**Department of Software Engineering**
+
+**Faculty of Telecommunication and Information Engineering**
+
+**University of Engineering and Technology (UET), Taxila**
+
+---
+
+## 👨‍💻 Developer
+
+**Muneer Hussain**
+
+Lead Software Engineer • Machine Learning Developer • Software Engineering Researcher
+
+---
+
+⭐ If you find this project useful, consider giving it a **Star** on GitHub.
