@@ -235,7 +235,7 @@ npm run dev
 Open your browser:
 
 ```
-http://localhost:3000
+https://6a3fa52df59c19ecef72f4cb--sage-kitsune-510d43.netlify.app/
 ```
 
 ---
